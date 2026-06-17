@@ -2,6 +2,53 @@
 <html>
 <head>
     <title>Beginner Cooking Guide</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fbf6ee;
+            color: #2b2620;
+            padding: 30px;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        h1 {
+            color: darkgreen;
+        }
+
+        button {
+            margin: 6px;
+            padding: 10px 14px;
+            background-color: #e8b65a;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background-color: #c1602a;
+            color: white;
+        }
+
+        #recipeArea {
+            margin-top: 20px;
+            padding: 20px;
+            border: 2px solid #ddd2b8;
+            background-color: white;
+            border-radius: 8px;
+        }
+
+        iframe {
+            max-width: 100%;
+            border: 0;
+        }
+
+        a {
+            color: maroon;
+        }
+    </style>
 </head>
 
 <body>
@@ -24,7 +71,7 @@
 <br>
 
 <a href="scratch.html">Back to Scratch Page</a>
-<br>
+<br><br>
 <a href="index.html">Back to Home</a>
 
 <script>
@@ -48,6 +95,7 @@ const recipes = {
         ],
         video: "https://www.youtube.com/embed/p0_WWUAPOns"
     },
+
     rice: {
         title: "White Rice",
         time: "20 minutes",
@@ -66,6 +114,7 @@ const recipes = {
         ],
         video: "https://www.youtube.com/embed/hnkVNVH3XzE?start=7"
     },
+
     pasta: {
         title: "Pasta",
         time: "10-12 minutes",
@@ -85,6 +134,7 @@ const recipes = {
         ],
         video: "https://www.youtube.com/embed/HlR6PLZcZg4"
     },
+
     chicken: {
         title: "Chicken Breast",
         time: "20-25 minutes",
@@ -109,29 +159,32 @@ const recipes = {
 function showRecipe(food) {
     const recipe = recipes[food];
     const recipeArea = document.getElementById("recipeArea");
-    if (!recipe) return;
 
     recipeArea.innerHTML = `
         <h2>${recipe.title}</h2>
         <p><strong>Time:</strong> ${recipe.time}</p>
         <p><strong>Difficulty:</strong> ${recipe.difficulty}</p>
+
         <h3>Ingredients</h3>
-        <ul>${recipe.ingredients.map(i => `<li>${i}</li>`).join("")}</ul>
+        <ul>
+            ${recipe.ingredients.map(i => `<li>${i}</li>`).join("")}
+        </ul>
+
         <h3>Instructions</h3>
-        <ol>${recipe.steps.map(s => `<li>${s}</li>`).join("")}</ol>
-        <h3>Video</h3>
-        <div id="videoWrap"></div>
+        <ol>
+            ${recipe.steps.map(s => `<li>${s}</li>`).join("")}
+        </ol>
+
+        <h3>Video Tutorial</h3>
+
+        <iframe
+            width="560"
+            height="315"
+            src="${recipe.video}"
+            title="${recipe.title}"
+            allowfullscreen>
+        </iframe>
     `;
-
-    const iframe = document.createElement("iframe");
-    iframe.width = "560";
-    iframe.height = "315";
-    iframe.src = recipe.video;
-    iframe.title = recipe.title + " video";
-    iframe.allowFullscreen = true;
-    iframe.style.border = "0";
-
-    document.getElementById("videoWrap").appendChild(iframe);
 }
 </script>
 
