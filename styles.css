@@ -1,0 +1,24 @@
+body {
+    font-family: Arial, sans-serif;
+    color: #333333;
+}
+
+h1 {
+    color: darkgreen;
+    text-align: center;
+}
+
+h2 {
+    color: darkblue;
+}
+
+div {
+    border: 2px solid gray;
+    padding: 10px;
+    margin: 10px;
+    background-color: white;
+}
+
+a {
+    color: maroon;
+}
