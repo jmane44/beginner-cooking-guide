@@ -3,22 +3,142 @@
 <head>
     <title>Beginner Cooking Guide</title>
 </head>
+
 <body>
 
 <h1>Beginner Cooking Guide</h1>
 
 <p>Choose a food to learn how to cook it.</p>
 
-<button>Scrambled Eggs</button>
-<button>White Rice</button>
-<button>Pasta</button>
-<button>Chicken Breast</button>
+<button onclick="showRecipe('eggs')">Scrambled Eggs</button>
+<button onclick="showRecipe('rice')">White Rice</button>
+<button onclick="showRecipe('pasta')">Pasta</button>
+<button onclick="showRecipe('chicken')">Chicken Breast</button>
 
-<br><br>
+<hr>
+
+<div id="recipeArea">
+    <h2>Select a recipe above.</h2>
+</div>
+
+<br>
 
 <a href="scratch.html">Back to Scratch Page</a>
 <br>
 <a href="index.html">Back to Home</a>
+
+<script>
+function showRecipe(food) {
+    let recipeArea = document.getElementById("recipeArea");
+
+    if (food === "eggs") {
+        recipeArea.innerHTML = `
+            <h2>Scrambled Eggs</h2>
+            <p><strong>Time:</strong> 5-7 minutes</p>
+            <p><strong>Difficulty:</strong> Easy</p>
+            <h3>Ingredients</h3>
+            <ul>
+                <li>2 eggs</li>
+                <li>1 tablespoon milk</li>
+                <li>Salt and pepper</li>
+                <li>Butter or oil</li>
+            </ul>
+            <h3>Instructions</h3>
+            <ol>
+                <li>Crack eggs into a bowl.</li>
+                <li>Add milk, salt, and pepper.</li>
+                <li>Whisk until mixed.</li>
+                <li>Heat a pan with butter.</li>
+                <li>Pour eggs into the pan and stir gently until cooked.</li>
+            </ol>
+            <h3>Video</h3>
+            <iframe width="560" height="315"
+            src="https://www.youtube.com/embed/PUP7U5vTMM0"
+            allowfullscreen></iframe>
+        `;
+    }
+
+    if (food === "rice") {
+        recipeArea.innerHTML = `
+            <h2>White Rice</h2>
+            <p><strong>Time:</strong> 20 minutes</p>
+            <p><strong>Difficulty:</strong> Easy</p>
+            <h3>Ingredients</h3>
+            <ul>
+                <li>1 cup white rice</li>
+                <li>2 cups water</li>
+                <li>Pinch of salt</li>
+            </ul>
+            <h3>Instructions</h3>
+            <ol>
+                <li>Rinse the rice.</li>
+                <li>Add rice, water, and salt to a pot.</li>
+                <li>Bring to a boil.</li>
+                <li>Lower heat, cover, and cook for 18 minutes.</li>
+                <li>Let it rest for 5 minutes before serving.</li>
+            </ol>
+            <h3>Video</h3>
+            <iframe width="560" height="315"
+            src="https://www.youtube.com/embed/Jf75I9LKhvg"
+            allowfullscreen></iframe>
+        `;
+    }
+
+    if (food === "pasta") {
+        recipeArea.innerHTML = `
+            <h2>Pasta</h2>
+            <p><strong>Time:</strong> 10-12 minutes</p>
+            <p><strong>Difficulty:</strong> Easy</p>
+            <h3>Ingredients</h3>
+            <ul>
+                <li>Pasta</li>
+                <li>Water</li>
+                <li>Salt</li>
+                <li>Sauce of choice</li>
+            </ul>
+            <h3>Instructions</h3>
+            <ol>
+                <li>Boil a large pot of water.</li>
+                <li>Add salt.</li>
+                <li>Add pasta and stir.</li>
+                <li>Cook until tender.</li>
+                <li>Drain and add sauce.</li>
+            </ol>
+            <h3>Video</h3>
+            <iframe width="560" height="315"
+            src="https://www.youtube.com/embed/bJUiWdM__Qw"
+            allowfullscreen></iframe>
+        `;
+    }
+
+    if (food === "chicken") {
+        recipeArea.innerHTML = `
+            <h2>Chicken Breast</h2>
+            <p><strong>Time:</strong> 20-25 minutes</p>
+            <p><strong>Difficulty:</strong> Medium</p>
+            <h3>Ingredients</h3>
+            <ul>
+                <li>1 chicken breast</li>
+                <li>Salt and pepper</li>
+                <li>Oil</li>
+                <li>Garlic powder or seasoning</li>
+            </ul>
+            <h3>Instructions</h3>
+            <ol>
+                <li>Season both sides of the chicken.</li>
+                <li>Heat oil in a pan.</li>
+                <li>Cook chicken 6-8 minutes per side.</li>
+                <li>Make sure the inside reaches 165°F.</li>
+                <li>Let it rest before cutting.</li>
+            </ol>
+            <h3>Video</h3>
+            <iframe width="560" height="315"
+            src="https://www.youtube.com/embed/NTBRThwL-2c"
+            allowfullscreen></iframe>
+        `;
+    }
+}
+</script>
 
 </body>
 </html>
