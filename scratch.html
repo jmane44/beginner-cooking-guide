@@ -1,310 +1,152 @@
-/* ============================================
-   Basic Cooking Skills — styles.css
-   A warm, cookbook-card aesthetic
-   ============================================ */
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Cooking Skills</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="page">
 
-:root {
-  --cream: #FBF6EE;
-  --cream-deep: #F3EBDA;
-  --ink: #2B2620;
-  --terracotta: #C1602A;
-  --terracotta-deep: #9C4A1F;
-  --sage: #7A8B6F;
-  --butter: #E8B65A;
-  --line: #DDD2B8;
+    <a id="top"></a>
+    <a class="top-link" href="#bottom">Jump to bottom ↓</a>
 
-  --font-display: "Fraunces", Georgia, "Times New Roman", serif;
-  --font-body: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  --font-label: "Source Sans Pro", sans-serif;
-}
+    <header class="hero">
+        <p class="eyebrow">A Kitchen Primer</p>
+        <h1>Basic Cooking Skills Everyone Should Know</h1>
+        <p>
+            Cooking is one of those life skills that quietly pays you back —
+            it saves money, supports better health, and builds real confidence
+            in the kitchen. Here's where to start.
+        </p>
+    </header>
 
-@media (prefers-reduced-motion: reduce) {
-  * { animation: none !important; transition: none !important; }
-}
+    <section aria-labelledby="why-heading">
+        <h2 id="why-heading">Why Learn to Cook?</h2>
+        <p class="section-intro">
+            You don't need culinary school to feed yourself well. A handful of
+            reliable techniques covers most of what you'll ever need to cook
+            at home — the rest is just practice and seasoning to taste.
+        </p>
+    </section>
 
-* { box-sizing: border-box; }
+    <hr class="divider">
 
-html { scroll-behavior: smooth; }
+    <section aria-labelledby="skills-heading">
+        <h2 id="skills-heading">Cooking Skills</h2>
+        <p class="section-intro">
+            Start with the basics, then work your way up. Each group builds
+            on the one before it.
+        </p>
 
-body {
-  margin: 0;
-  background: var(--cream);
-  color: var(--ink);
-  font-family: var(--font-body);
-  font-size: 17px;
-  line-height: 1.6;
-}
+        <div class="shelf">
+            <div class="level-group basic-group">
+                <span class="level-label basic">Basic · Start Here</span>
+                <ul class="skill-list">
+                    <li>Eggs</li>
+                    <li>Rice</li>
+                    <li>Pasta</li>
+                </ul>
+            </div>
 
-.page {
-  max-width: 760px;
-  margin: 0 auto;
-  padding: 0 24px 80px;
-}
+            <div class="level-group intermediate-group">
+                <span class="level-label intermediate">Intermediate</span>
+                <ul class="skill-list">
+                    <li>Chicken</li>
+                    <li>Vegetables</li>
+                    <li>Soups</li>
+                </ul>
+            </div>
+        </div>
+    </section>
 
-/* ---------- Skip link / top nav ---------- */
-.top-link {
-  display: inline-block;
-  margin: 18px 0 0;
-  font-family: var(--font-label);
-  font-size: 13px;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--terracotta-deep);
-  text-decoration: none;
-  border-bottom: 1px solid transparent;
-}
-.top-link:hover,
-.top-link:focus-visible {
-  border-bottom-color: var(--terracotta-deep);
-}
+    <hr class="divider">
 
-/* ---------- Header / Hero ---------- */
-.hero {
-  padding: 56px 0 32px;
-  border-bottom: 3px solid var(--ink);
-  margin-bottom: 40px;
-}
+    <section class="app-callout" aria-labelledby="app-heading">
+        <h2 id="app-heading">My Cooking App</h2>
+        <p>
+            Want guided, step-by-step recipes for everything above? The
+            companion app walks beginners through each skill at their own pace.
+        </p>
+        <a class="btn" href="cooking-app.html">Visit Beginner Cooking Guide App</a>
+    </section>
 
-.hero .eyebrow {
-  font-family: var(--font-label);
-  font-size: 13px;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--sage);
-  margin: 0 0 10px;
-}
+    <section aria-labelledby="image-heading">
+        <h2 id="image-heading">Cooking Image</h2>
+        <figure class="media-frame">
+            <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836"
+                 alt="Fresh ingredients laid out on a kitchen counter for cooking"
+                 width="800" height="533" loading="lazy">
+            <figcaption class="media-caption">Fresh ingredients ready for prep.</figcaption>
+        </figure>
+    </section>
 
-h1 {
-  font-family: var(--font-display);
-  font-size: clamp(2.2rem, 5vw, 3.2rem);
-  font-weight: 600;
-  line-height: 1.1;
-  margin: 0 0 18px;
-  color: var(--ink);
-}
+    <section aria-labelledby="video-heading">
+        <h2 id="video-heading">Beginner Cooking Video</h2>
+        <div class="video-wrap">
+            <iframe
+                src="https://www.youtube.com/embed/kRCH8kD1GD0"
+                title="YouTube video player"
+                allowfullscreen
+                loading="lazy">
+            </iframe>
+        </div>
+    </section>
 
-.hero p {
-  font-size: 1.1rem;
-  max-width: 56ch;
-  color: #4A4338;
-  margin: 0;
-}
+    <section aria-labelledby="viz-heading">
+        <h2 id="viz-heading">Food Security in the United States</h2>
+        <p class="section-intro">
+            This interactive Tableau viz from the USDA Economic Research Service
+            compares food security rates across U.S. states.
+        </p>
+        <div class="viz-wrap">
+            <div class='tableauPlaceholder' id='vizFoodSecurityStates' style='position: relative'>
+                <noscript>
+                    <a href='#'>
+                        <img alt='Food Security in the United States: How Do States Compare?'
+                        src='https://public.tableau.com/static/images/Fo/FoodSecurityintheUnitedStatesHowDoStatesCompare/mainstory/1_rss.png'
+                        style='border: none' />
+                    </a>
+                </noscript>
+                <object class='tableauViz' style='display:none;'>
+                    <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                    <param name='embed_code_version' value='3' />
+                    <param name='site_root' value='' />
+                    <param name='name' value='FoodSecurityintheUnitedStatesHowDoStatesCompare/mainstory' />
+                    <param name='tabs' value='no' />
+                    <param name='toolbar' value='yes' />
+                    <param name='static_image' value='https://public.tableau.com/static/images/Fo/FoodSecurityintheUnitedStatesHowDoStatesCompare/mainstory/1.png' />
+                    <param name='animate_transition' value='yes' />
+                    <param name='display_static_image' value='yes' />
+                    <param name='display_spinner' value='yes' />
+                    <param name='display_overlay' value='yes' />
+                    <param name='display_count' value='yes' />
+                    <param name='language' value='en-US' />
+                </object>
+            </div>
+        </div>
+    </section>
 
-/* ---------- Section headings ---------- */
-h2 {
-  font-family: var(--font-display);
-  font-size: 1.6rem;
-  font-weight: 600;
-  margin: 0 0 8px;
-  color: var(--ink);
-}
+    <footer class="page-footer">
+        <a id="bottom" href="#top">Back to top ↑</a>
+        <a href="index.html">Return Home</a>
+    </footer>
 
-section {
-  margin-bottom: 56px;
-}
+</div>
 
-.section-intro {
-  color: #4A4338;
-  max-width: 60ch;
-  margin: 0 0 28px;
-}
-
-/* torn-edge style divider between sections, evokes a recipe card stack */
-.divider {
-  border: none;
-  height: 12px;
-  margin: 0 0 40px;
-  background: repeating-linear-gradient(
-    -45deg,
-    var(--line) 0,
-    var(--line) 6px,
-    transparent 6px,
-    transparent 12px
-  );
-  opacity: 0.6;
-}
-
-/* ---------- Skill shelf / cards ---------- */
-.shelf {
-  display: grid;
-  gap: 28px;
-}
-
-.level-group {
-  background: #FFFFFF;
-  border: 1px solid var(--line);
-  border-radius: 4px;
-  padding: 24px 26px;
-  box-shadow: 0 2px 0 var(--line), 0 6px 16px -10px rgba(43, 38, 32, 0.25);
-}
-
-.level-label {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-family: var(--font-label);
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  padding: 5px 12px;
-  border-radius: 999px;
-  margin-bottom: 14px;
-}
-
-.level-label.basic {
-  background: rgba(122, 139, 111, 0.15);
-  color: var(--sage);
-}
-
-.level-label.intermediate {
-  background: rgba(193, 96, 42, 0.12);
-  color: var(--terracotta-deep);
-}
-
-.skill-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-  gap: 10px;
-}
-
-.skill-list li {
-  font-family: var(--font-body);
-  font-size: 1rem;
-  padding: 10px 14px;
-  background: var(--cream-deep);
-  border-radius: 4px;
-  border-left: 3px solid var(--butter);
-}
-
-.level-group.intermediate-group .skill-list li {
-  border-left-color: var(--terracotta);
-}
-
-/* ---------- App callout ---------- */
-.app-callout {
-  background: var(--ink);
-  color: var(--cream);
-  border-radius: 6px;
-  padding: 28px 30px;
-}
-
-.app-callout h2 {
-  color: var(--cream);
-}
-
-.app-callout p {
-  color: #D8CFBE;
-  margin: 0 0 18px;
-}
-
-.btn {
-  display: inline-block;
-  font-family: var(--font-label);
-  font-weight: 600;
-  font-size: 14px;
-  letter-spacing: 0.03em;
-  text-decoration: none;
-  color: var(--ink);
-  background: var(--butter);
-  padding: 12px 22px;
-  border-radius: 4px;
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
-}
-
-.btn:hover,
-.btn:focus-visible {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 14px -6px rgba(43, 38, 32, 0.4);
-}
-
-/* ---------- Media blocks ---------- */
-.media-frame {
-  border: 1px solid var(--line);
-  border-radius: 6px;
-  overflow: hidden;
-  background: #fff;
-}
-
-.media-frame img {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
-.media-caption {
-  font-family: var(--font-label);
-  font-size: 13px;
-  color: #6B6353;
-  padding: 10px 14px;
-  border-top: 1px solid var(--line);
-  margin: 0;
-}
-
-.video-wrap {
-  position: relative;
-  width: 100%;
-  padding-bottom: 56.25%; /* 16:9 */
-  border-radius: 6px;
-  overflow: hidden;
-  border: 1px solid var(--line);
-}
-
-.video-wrap iframe {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  border: 0;
-}
-
-/* ---------- Tableau viz wrapper ---------- */
-.viz-wrap {
-  border: 1px solid var(--line);
-  border-radius: 6px;
-  padding: 4px;
-  background: #fff;
-}
-
-/* ---------- Footer / back-to-top ---------- */
-.page-footer {
-  margin-top: 48px;
-  padding-top: 24px;
-  border-top: 3px solid var(--ink);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 12px;
-}
-
-.page-footer a {
-  font-family: var(--font-label);
-  font-size: 13px;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--terracotta-deep);
-  text-decoration: none;
-}
-
-.page-footer a:hover,
-.page-footer a:focus-visible {
-  text-decoration: underline;
-}
-
-/* ---------- Focus visibility ---------- */
-a:focus-visible,
-button:focus-visible {
-  outline: 2px solid var(--terracotta);
-  outline-offset: 2px;
-}
-
-/* ---------- Responsive ---------- */
-@media (max-width: 600px) {
-  .hero { padding-top: 36px; }
-  .level-group { padding: 18px; }
-  .app-callout { padding: 22px; }
-}
+<script type='text/javascript'>
+    var divElement = document.getElementById('vizFoodSecurityStates');
+    var vizElement = divElement.getElementsByTagName('object')[0];
+    vizElement.style.width = '100%';
+    vizElement.style.height = '600px';
+    var scriptElement = document.createElement('script');
+    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+    vizElement.parentNode.insertBefore(scriptElement, vizElement);
+</script>
+</body>
+</html>
+```
