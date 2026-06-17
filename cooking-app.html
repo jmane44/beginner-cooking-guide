@@ -28,115 +28,110 @@
 <a href="index.html">Back to Home</a>
 
 <script>
+const recipes = {
+    eggs: {
+        title: "Scrambled Eggs",
+        time: "5-7 minutes",
+        difficulty: "Easy",
+        ingredients: [
+            "2 eggs",
+            "1 tablespoon milk",
+            "Salt and pepper",
+            "Butter or oil"
+        ],
+        steps: [
+            "Crack eggs into a bowl.",
+            "Add milk, salt, and pepper.",
+            "Whisk until mixed.",
+            "Heat a pan with butter.",
+            "Pour eggs into the pan and stir gently until cooked."
+        ],
+        video: "https://www.youtube.com/embed/p0_WWUAPOns"
+    },
+    rice: {
+        title: "White Rice",
+        time: "20 minutes",
+        difficulty: "Easy",
+        ingredients: [
+            "1 cup white rice",
+            "2 cups water",
+            "Pinch of salt"
+        ],
+        steps: [
+            "Rinse the rice.",
+            "Add rice, water, and salt to a pot.",
+            "Bring to a boil.",
+            "Lower heat, cover, and cook for 18 minutes.",
+            "Let it rest for 5 minutes before serving."
+        ],
+        video: "https://www.youtube.com/embed/hnkVNVH3XzE?start=7"
+    },
+    pasta: {
+        title: "Pasta",
+        time: "10-12 minutes",
+        difficulty: "Easy",
+        ingredients: [
+            "Pasta",
+            "Water",
+            "Salt",
+            "Sauce of choice"
+        ],
+        steps: [
+            "Boil a large pot of water.",
+            "Add salt.",
+            "Add pasta and stir.",
+            "Cook until tender.",
+            "Drain and add sauce."
+        ],
+        video: "https://www.youtube.com/embed/HlR6PLZcZg4"
+    },
+    chicken: {
+        title: "Chicken Breast",
+        time: "20-25 minutes",
+        difficulty: "Medium",
+        ingredients: [
+            "1 chicken breast",
+            "Salt and pepper",
+            "Oil",
+            "Garlic powder or seasoning"
+        ],
+        steps: [
+            "Season both sides of the chicken.",
+            "Heat oil in a pan.",
+            "Cook chicken 6-8 minutes per side.",
+            "Make sure the inside reaches 165°F.",
+            "Let it rest before cutting."
+        ],
+        video: "https://www.youtube.com/embed/NTBRThwL-2c"
+    }
+};
+
 function showRecipe(food) {
-    let recipeArea = document.getElementById("recipeArea");
+    const recipe = recipes[food];
+    const recipeArea = document.getElementById("recipeArea");
+    if (!recipe) return;
 
-    if (food === "eggs") {
-        recipeArea.innerHTML = `
-            <h2>Scrambled Eggs</h2>
-            <p><strong>Time:</strong> 5-7 minutes</p>
-            <p><strong>Difficulty:</strong> Easy</p>
-            <h3>Ingredients</h3>
-            <ul>
-                <li>2 eggs</li>
-                <li>1 tablespoon milk</li>
-                <li>Salt and pepper</li>
-                <li>Butter or oil</li>
-            </ul>
-            <h3>Instructions</h3>
-            <ol>
-                <li>Crack eggs into a bowl.</li>
-                <li>Add milk, salt, and pepper.</li>
-                <li>Whisk until mixed.</li>
-                <li>Heat a pan with butter.</li>
-                <li>Pour eggs into the pan and stir gently until cooked.</li>
-            </ol>
-            <h3>Video</h3>
-            <iframe width="560" height="315"
-            src="https://www.youtube.com/embed/PUP7U5vTMM0"
-            allowfullscreen></iframe>
-        `;
-    }
+    recipeArea.innerHTML = `
+        <h2>${recipe.title}</h2>
+        <p><strong>Time:</strong> ${recipe.time}</p>
+        <p><strong>Difficulty:</strong> ${recipe.difficulty}</p>
+        <h3>Ingredients</h3>
+        <ul>${recipe.ingredients.map(i => `<li>${i}</li>`).join("")}</ul>
+        <h3>Instructions</h3>
+        <ol>${recipe.steps.map(s => `<li>${s}</li>`).join("")}</ol>
+        <h3>Video</h3>
+        <div id="videoWrap"></div>
+    `;
 
-    if (food === "rice") {
-        recipeArea.innerHTML = `
-            <h2>White Rice</h2>
-            <p><strong>Time:</strong> 20 minutes</p>
-            <p><strong>Difficulty:</strong> Easy</p>
-            <h3>Ingredients</h3>
-            <ul>
-                <li>1 cup white rice</li>
-                <li>2 cups water</li>
-                <li>Pinch of salt</li>
-            </ul>
-            <h3>Instructions</h3>
-            <ol>
-                <li>Rinse the rice.</li>
-                <li>Add rice, water, and salt to a pot.</li>
-                <li>Bring to a boil.</li>
-                <li>Lower heat, cover, and cook for 18 minutes.</li>
-                <li>Let it rest for 5 minutes before serving.</li>
-            </ol>
-            <h3>Video</h3>
-            <iframe width="560" height="315"
-            src="https://www.youtube.com/embed/Jf75I9LKhvg"
-            allowfullscreen></iframe>
-        `;
-    }
+    const iframe = document.createElement("iframe");
+    iframe.width = "560";
+    iframe.height = "315";
+    iframe.src = recipe.video;
+    iframe.title = recipe.title + " video";
+    iframe.allowFullscreen = true;
+    iframe.style.border = "0";
 
-    if (food === "pasta") {
-        recipeArea.innerHTML = `
-            <h2>Pasta</h2>
-            <p><strong>Time:</strong> 10-12 minutes</p>
-            <p><strong>Difficulty:</strong> Easy</p>
-            <h3>Ingredients</h3>
-            <ul>
-                <li>Pasta</li>
-                <li>Water</li>
-                <li>Salt</li>
-                <li>Sauce of choice</li>
-            </ul>
-            <h3>Instructions</h3>
-            <ol>
-                <li>Boil a large pot of water.</li>
-                <li>Add salt.</li>
-                <li>Add pasta and stir.</li>
-                <li>Cook until tender.</li>
-                <li>Drain and add sauce.</li>
-            </ol>
-            <h3>Video</h3>
-            <iframe width="560" height="315"
-            src="https://www.youtube.com/embed/bJUiWdM__Qw"
-            allowfullscreen></iframe>
-        `;
-    }
-
-    if (food === "chicken") {
-        recipeArea.innerHTML = `
-            <h2>Chicken Breast</h2>
-            <p><strong>Time:</strong> 20-25 minutes</p>
-            <p><strong>Difficulty:</strong> Medium</p>
-            <h3>Ingredients</h3>
-            <ul>
-                <li>1 chicken breast</li>
-                <li>Salt and pepper</li>
-                <li>Oil</li>
-                <li>Garlic powder or seasoning</li>
-            </ul>
-            <h3>Instructions</h3>
-            <ol>
-                <li>Season both sides of the chicken.</li>
-                <li>Heat oil in a pan.</li>
-                <li>Cook chicken 6-8 minutes per side.</li>
-                <li>Make sure the inside reaches 165°F.</li>
-                <li>Let it rest before cutting.</li>
-            </ol>
-            <h3>Video</h3>
-            <iframe width="560" height="315"
-            src="https://www.youtube.com/embed/NTBRThwL-2c"
-            allowfullscreen></iframe>
-        `;
-    }
+    document.getElementById("videoWrap").appendChild(iframe);
 }
 </script>
 
